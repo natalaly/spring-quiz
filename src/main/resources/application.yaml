@@ -1,0 +1,32 @@
+spring:
+  config:
+    import: "classpath:quiz/questions.yaml"
+  main:
+    log-startup-info: false
+    #banner-mode: off
+  output:
+    ansi:
+      enabled: always
+
+logging.level:
+  ru.yandex.practicum.quiz.QuizApp: info  # настраиваем уровень логера
+
+spring-quiz:
+  title: "\"Тест по Spring Framework\""
+  # spring-quiz.report - report settings
+  report:
+    # spring-quiz.report.enabled -  does report need to be generated
+    enabled: true
+    # spring-quiz.report.mode - report generation mode;
+    # available values:
+    # verbose - extended report generation
+    # concise - short report generation
+    mode: "verbose"
+    output:
+      # spring-quiz.report.output.mode - report output mode
+      # available values:
+      # console - report output to the console
+      # file - report output to the file
+      mode: "console"
+      # spring-quiz.report.output.path - path to the file, where report data will be stored
+      path: "./quiz-result.txt"
